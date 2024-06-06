@@ -1,6 +1,7 @@
 import { ThemeProvider } from 'styled-components'
 import { Buttton } from './components/Button'
 import { defaultTheme } from './styles/themes/default'
+import { GoblalStyle } from './styles/global'
 
 export function App() {
   
@@ -13,7 +14,7 @@ export function App() {
 <Buttton variant="danger" />
 <Buttton/>
 
-
+<GoblalStyle/>
 
 </ThemeProvider>
  
