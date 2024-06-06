@@ -1,0 +1,10 @@
+{
+  "devDependencies": {
+    "@eslint/js": "^9.4.0",
+    "@rocketseat/eslint-config": "^2.2.2",
+    "eslint": "^8.57.0",
+    "eslint-plugin-react": "^7.34.2",
+    "globals": "^15.4.0",
+    "typescript-eslint": "^7.12.0"
+  }
+}
