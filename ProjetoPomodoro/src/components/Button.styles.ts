@@ -16,11 +16,14 @@ export const ButtonContainer = styled.button <ButtonContainerPros>`
 
 width:100px;
 height:40px;
+border-radius:4px;
+border:0;
+margin:8px;
 
-${props =>{
-    return  `background-color: ${buttonVariants[props.variant]}`
+background-color: ${props => props.theme.primary};
+color: ${props =>props.theme.white}
 
-}}
+
 
 
 
