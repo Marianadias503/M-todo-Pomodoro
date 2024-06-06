@@ -7,7 +7,7 @@ export function App() {
  
 <>
 <Buttton variant="primary"  />
-<Buttton variant="secundary" />
+<Buttton variant="secondary" />
 <Buttton variant="success" />
 <Buttton variant="danger" />
 <Buttton/>
