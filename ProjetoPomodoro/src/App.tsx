@@ -15,8 +15,7 @@ export function App() {
 <Buttton/>
 
 <GoblalStyle/>
-
-</ThemeProvider>
+    </ThemeProvider>
  
   )
 }
