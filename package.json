@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "phosphor-react": "^1.4.1",
+    "react-hook-form": "^7.52.0",
     "react-router-dom": "^6.23.1"
   }
 }
