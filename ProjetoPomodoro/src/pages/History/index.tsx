@@ -8,10 +8,6 @@ export function History() {
     return (
         <HistoryContainer>
             <h1>Meu histórico</h1>
-            <pre>
-                {JSON.stringify(cycles, null, 2)}
-            </pre>
-            
             <HistoryList>
                 <table>
                     <thead>
@@ -29,9 +25,14 @@ export function History() {
                                 <td>{cycle.minutesAmount} minutos</td>
                                 <td>{cycle.startDate.toString()}</td>
                                 <td>
-                                    <Status statusColor={getStatusColor(cycle)}>
-                                        {getStatusText(cycle)}
-                                    </Status>
+                                   {cycle.finishedDate && (
+                                   <Status statusColor="green" > concluido </Status> )}
+
+                                   {cycle.interruptDate && (
+                                   <Status statusColor="red" > Interrompido </Status> ) }
+
+                                   {(!cycle.finishedDate  && !cycle.interruptDate ) &&(
+                                   <Status statusColor="yellow" > Em andamento </Status> ) }
                                 </td>
                             </tr>
                         ))}
@@ -40,24 +41,4 @@ export function History() {
             </HistoryList>
         </HistoryContainer>
     );
-}
-
-function getStatusColor(cycle) {
-    if (cycle.finishedDate) {
-        return 'green';
-    }
-    if (cycle.interruptDate) {
-        return 'red';
-    }
-    return 'yellow';
-}
-
-function getStatusText(cycle) {
-    if (cycle.finishedDate) {
-        return 'Concluído';
-    }
-    if (cycle.interruptDate) {
-        return 'Interrompido';
-    }
-    return 'Em andamento';
 }
