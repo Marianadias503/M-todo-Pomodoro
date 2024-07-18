@@ -10,6 +10,7 @@
   "dependencies": {
     "@hookform/resolvers": "^3.6.0",
     "date-fns": "^3.6.0",
+    "immer": "^10.1.1",
     "phosphor-react": "^1.4.1",
     "react-hook-form": "^7.52.0",
     "react-router-dom": "^6.23.1",
