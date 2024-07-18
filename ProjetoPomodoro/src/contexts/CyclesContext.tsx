@@ -1,4 +1,4 @@
-import { createContext, ReactNode, useState, useReducer } from 'react';
+import { createContext, ReactNode, useState, useReducer, useEffect } from 'react';
 import { Cycle, cyclesReducer} from '../reducers/cycles/reducer';
 import { ActionTypes, addNewCycleAction, interruptCurrentCycleAction, markCurrentCycleAsFinishedAction } from '../reducers/cycles/actions';
 
@@ -31,7 +31,23 @@ export function CyclesContextProvider({ children }: CyclesContextProviderProps) 
     {
     cycles: [],
     activeCycleId: null,
+  },()=>{
+
+    const storedStateJSON= localStorage.getItem('@Pomodoro:cycles-state-1.0.0');
+    if(storedStateJSON){
+      return JSON.parse(storedStateJSON)
+    }
+
   });
+
+  useEffect (()=> {
+
+    const stateJSON = JSON.stringify(cyclesState)
+
+    localStorage.setItem('@Pomodoro:cycles-state-1.0.0' , stateJSON)
+
+
+  },[cyclesState])
 
   const { cycles, activeCycleId } = cyclesState;
   const [amountSecondsPassed, setAmountSecondsPassed] = useState(0);
